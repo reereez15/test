@@ -61,4 +61,6 @@ public class Senior {
     @ManyToMany(mappedBy = "seniors")
     private List<Guardian> guardians;
 
+    @Column(nullable = false)
+    private boolean completed = false;
 }

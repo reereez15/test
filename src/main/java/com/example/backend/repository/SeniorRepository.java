@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface SeniorRepository extends JpaRepository<Senior, Long> {
     Optional<Senior> findByEmail(String email);
     List<Senior> findByGuardiansContains(Guardian guardian);
+    Optional<Senior> findById(Long id);
 }

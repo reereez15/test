@@ -35,11 +35,16 @@ public class Guardian {
     @Column(nullable = false, updatable = false)
     private LocalDateTime created_at;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
     @Builder
-    public Guardian(String name, String email, String relationship) {
+    public Guardian(String name, String guardianEmail, String relationship, Role role) {
         this.name = name;
-        this.guardianEmail = email;
+        this.guardianEmail = guardianEmail;
         this.relationship = relationship;
+        this.role = role;
     }
 
     @ManyToMany
@@ -53,6 +58,4 @@ public class Guardian {
         this.name = name;
         return this;
     }
-
-    private Role role;
 }

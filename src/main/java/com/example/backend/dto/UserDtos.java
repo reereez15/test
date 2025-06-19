@@ -7,7 +7,17 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class UserDtos {
-    public record UserCreateRequestDto(Long id){}
+    public record UserCreateRequestDto(
+            Long id,
+            String name,
+            LocalDate birthdate,
+            char gender,
+            String address,
+            String emergency_contact,
+            String illness,
+            String medication,
+            String notes
+    ){}
     public record UserUpdateRequestDto(Boolean completed) {}
 
     public record UserResponseDto(Long id, LocalDate birthdate, String name , char gender, String address,
