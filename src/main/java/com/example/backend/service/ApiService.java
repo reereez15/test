@@ -1,6 +1,6 @@
-package com.example.backend.domain.service;
+package com.example.backend.service;
 
-import com.example.backend.domain.dto.HospitalDetailItem;
+import com.example.backend.dto.HospitalDetailItem;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;

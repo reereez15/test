@@ -1,7 +1,7 @@
-package com.example.backend.domain.conttoller;
+package com.example.backend.conttoller;
 
-import com.example.backend.domain.dto.HospitalDetailItem;
-import com.example.backend.domain.service.ApiService;
+import com.example.backend.dto.HospitalDetailItem;
+import com.example.backend.service.ApiService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

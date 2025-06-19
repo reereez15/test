@@ -1,7 +1,7 @@
-package com.example.backend.domain.repository;
+package com.example.backend.repository;
 
-import com.example.backend.domain.DB.Guardian;
-import com.example.backend.domain.DB.Senior;
+import com.example.backend.DB.Guardian;
+import com.example.backend.DB.Senior;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.backend.domain.DB;
+package com.example.backend.DB;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,7 +31,7 @@ public class Senior {
     private String name;
 
     @Column(nullable = false)
-    private String seniorEmail;
+    private String email;
 
     @Column(nullable = false)
     private LocalDate birthdate;
@@ -62,5 +62,6 @@ public class Senior {
     private List<Guardian> guardians;
 
     @Column(nullable = false)
+    @Builder.Default
     private boolean completed = false;
 }

@@ -1,4 +1,4 @@
-package com.example.backend.domain.DB;
+package com.example.backend.DB;
 
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -18,7 +18,7 @@ import java.util.List;
 @Getter
 public class Guardian {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private long id;
 

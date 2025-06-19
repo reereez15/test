@@ -1,7 +1,7 @@
-package com.example.backend.domain.conttoller;
+package com.example.backend.conttoller;
 
-import com.example.backend.domain.dto.UserDtos;
-import com.example.backend.domain.service.UserService;
+import com.example.backend.dto.UserDtos;
+import com.example.backend.service.UserService;
 import org.springframework.security.oauth2.jwt.Jwt;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,14 +14,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/senior")
 @RequiredArgsConstructor
-public class UserController {
+public class SeniorController {
 
     private final UserService userService;
     // senior 조회
     @GetMapping
-    public ResponseEntity<List<UserDtos.UserResponseDto>> getMySenior(
+    public ResponseEntity<List<UserDtos.SeniorResponseDto>> getMySenior(
             @AuthenticationPrincipal Jwt principal){
-        return ResponseEntity.ok(userService.findMySenior(principal.getClaimAsString("email"))); // 이부분 해석 필요
+        return ResponseEntity.ok(userService.findMySenior(principal.getClaimAsString("email")));
     }
     // senior 추가
 //    @PostMapping
@@ -35,8 +35,8 @@ public class UserController {
 //        ));
 //    }
     @PostMapping
-    public ResponseEntity<UserDtos.UserResponseDto> createSenior(
-            @RequestBody UserDtos.UserCreateRequestDto requestDto,
+    public ResponseEntity<UserDtos.SeniorResponseDto> createSenior(
+            @RequestBody UserDtos.SeniorCreateRequestDto requestDto,
             @AuthenticationPrincipal Jwt principal) {
         String email = principal.getClaimAsString("email");
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -44,7 +44,7 @@ public class UserController {
     }
     // senior 약 복용 완료 / 미완료 토글
     @PatchMapping("/{id}")
-    public ResponseEntity<UserDtos.UserResponseDto> toggleSenior(
+    public ResponseEntity<UserDtos.SeniorResponseDto> toggleSenior(
             @PathVariable Long id,
             @AuthenticationPrincipal Jwt principal){
         return ResponseEntity.ok(userService.toggleSenior(id, principal.getClaimAsString("email")));

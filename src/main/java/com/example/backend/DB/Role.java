@@ -1,4 +1,4 @@
-package com.example.backend.domain.DB;
+package com.example.backend.DB;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
